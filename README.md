@@ -52,7 +52,7 @@ In this lab you'll create a Helm chart repository and use it to deploy a small J
 6. Build the application .ear file using Maven by typing in (or copying and pasting in) the following command
 
     ```text
-    mvn package
+    mvn package "-DuserName=${USER}"
     ```
 
 7. Build a docker image  by typing in (or copying and pasting in) the following (uncommented) commands
@@ -116,7 +116,7 @@ In this lab you'll create a Helm chart repository and use it to deploy a small J
 
 1. In your terminal window type the following command, substituting  your ICP namespace (e.g devnamespace009) for [YOUR_DEVNAMESPACE].  **Note**: Helm charts can be deployed multiple times but each deployment must have a unique name
 ```
-   helm install --name pbw-liberty-mariadb-$USER --set liberty.image.registry=mycluster.icp:8500 --set liberty.image.namespace=[YOUR_DEVNAMESPACE] local/pbw-liberty-mariadb --tls
+   helm install --name pbw-liberty-mariadb-$USER  --set liberty.image.namespace=[YOUR_DEVNAMESPACE] --set liberty.image.registry=mycluster.icp:8500 --set liberty.user=$USER --set liberty.ingress.enabled=true --set liberty.service.type=ClusterIP local/pbw-liberty-mariadb --tls
 ```
 
 ### Step 6: Launch your deployed app
