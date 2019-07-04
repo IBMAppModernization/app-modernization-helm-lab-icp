@@ -20,7 +20,14 @@ You will see a number of environment variables prefaced with a `$` used in the l
 
 ### Setup
 
-1.  If following this lab as part of an IBM instructor led workshop, login into to the terminal server with the credentials provided to you
+1.  If following this lab as part of an IBM instructor led workshop, login into to the terminal server with the credentials provided to you and complete all environment setup steps. Check your environment with these commands (all should have output):
+
+    ```
+    echo $CLUSTER_URL
+    echo $USERNAME
+    echo $REGISTRY_URL
+    echo $DEVNAMESPACE
+    ```
 
 2.  Login to your designated ICP instance from the command line (replace $CLUSTER_URL if it is not set in your environment)
    
